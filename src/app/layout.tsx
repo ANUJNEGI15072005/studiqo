@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./globals.css"
+import { Inter, Poppins, Orbitron } from "next/font/google"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
+  variable: "--font-inter",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
   subsets: ["latin"],
-});
+  weight: ["400", "600", "700"],
+  variable: "--font-poppins",
+})
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +31,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${poppins.variable} ${orbitron.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
