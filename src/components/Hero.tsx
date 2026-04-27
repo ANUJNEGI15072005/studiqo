@@ -44,8 +44,11 @@ export default function Hero() {
 
                 <div className=" justify-center hidden lg:flex">
                     <Image
-                        src="/hero1.png"
+                        src="/hero.webp"
                         alt="StudIQo UI"
+                        priority                    
+                        quality={85}                
+                        placeholder="blur"
                         width={500}
                         height={400}
                         className="rounded-2xl shadow-xl shadow-blue-500/10 transition duration-500"
